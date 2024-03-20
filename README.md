@@ -1,3 +1,10 @@
+Using ReactJS\
+Features implemented so far:\
+Add Car\
+View all inventory\
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
