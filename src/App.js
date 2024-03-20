@@ -5,6 +5,7 @@ function CarList() {
    // State variables
    const [cars, setCars] = useState([]);
    const [newCar, setNewCar] = useState({ make: '', model: '', bodyType: '', seats: 0, price: 0 });
+
   function fetchCars() {
     axios.get('http://localhost:8080/api/v1/car/all')
       .then(response => {
@@ -35,6 +36,16 @@ function CarList() {
       });
   }
 
+  function deleteCar(id){
+    axios.delete(`http://localhost:8080/api/v1/car/${id}`)
+    .then(() => {
+      fetchCars();
+    })
+    .catch(error => {
+      console.error('Error deleting car: ', error);
+    });
+  }
+
   // Fetch the list of cars when the component mounts
   useEffect(() => {
     fetchCars();
@@ -57,6 +68,7 @@ function CarList() {
         {cars.map((car) => (
           <li key={car.id}>
             {car.make} - {car.model} - {car.bodyType} - Seats: {car.seats} - Price: {car.price}
+            <button onClick = {() => deleteCar(car.id)}>Delete</button>
           </li>
         ))}
       </ul>
