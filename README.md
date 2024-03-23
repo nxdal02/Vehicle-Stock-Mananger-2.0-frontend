@@ -1,7 +1,9 @@
 Using ReactJS\
 Features implemented so far:\
-Add Car\
-View all inventory
+Add Car to inventory\
+Remove Car from inventory\
+View all inventory\
+
 
 
 # Getting Started with Create React App
